@@ -10,5 +10,6 @@
 4. run the command from the app you've downloaded:\
 	$ git filter-repo --replace-text ../replacements.txt --force
 5. Add the changes to the github repo
+	$ git remote add origin git@github.com:BongweKE/daraja-donation-app.git
 	$ git push -f origin main
 -  *f is for force to push*
