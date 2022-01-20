@@ -9,7 +9,7 @@ $ git config --global user.email "bongwe.obi@gmail.com"
 #I also do:
 
 $ git config --global color.ui true
-$ git config --global core.editor emacs
+$ git config --global core.editor code
 #The first of these will enable colored output in the terminal; the second tells git that you want to use emacs.
 
 #Set up ssh on your computer. I like Roger Peng’s guide to setting up password-less logins. Also see github’s guide to generating SSH keys.
