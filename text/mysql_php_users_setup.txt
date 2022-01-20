@@ -1,0 +1,32 @@
+sudo apt update
+sudo apt install mariadb-server
+
+echo "The next command will take you through a series of prompts where you can make some changes to your MariaDB installation’s security options. The first prompt will ask you to enter the current database root password. Since we have not set one up yet, press ENTER to indicate 'none'"
+echo "The next prompt asks you whether you’d like to set up a database root password. Type N and then press ENTER. In Debian, the root account for MariaDB is tied closely to automated system maintenance, so we should not change the configured authentication methods for that account. Doing so would make it possible for a package update to break the database system by removing access to the administrative account. Later, we will cover how to optionally set up an additional administrative account for password access if socket authentication is not appropriate for your use case."
+echo "From there, you can press Y and then ENTER to accept the defaults for all the subsequent questions. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MariaDB immediately respects the changes you have made."
+sudo mysql_secure_installation
+
+echo "Now, we will create a new user with root privileges and password-based access. Change the username and password to match your preferences:"
+echo "use the following commands:"
+echo "GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;"
+echo "then Flush the privileges to ensure that they are saved and available in the current session:"
+echo "FLUSH PRIVILEGES;"
+echo "to exit:"
+echo "exit"
+sudo mysql
+
+echo "now we can connect using admin acount we created and modify the db:"
+mysql -u admin -p
+
+
+echo " if it's not running"
+sudo systemctl status mysql
+sudo systemctl restart mysql
+
+
+
+echo "to do admin stuff without MYSQL commands:"
+echo "mysqladmin -?"
+
+
+

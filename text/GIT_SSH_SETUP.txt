@@ -1,0 +1,37 @@
+##GIT SSH SETUP
+
+#should be in home folder
+#Open a terminal/shell and type:
+
+$ git config --global user.name "BongweKE"
+$ git config --global user.email "bongwe.obi@gmail.com"
+
+#I also do:
+
+$ git config --global color.ui true
+$ git config --global core.editor emacs
+#The first of these will enable colored output in the terminal; the second tells git that you want to use emacs.
+
+#Set up ssh on your computer. I like Roger Peng’s guide to setting up password-less logins. Also see github’s guide to generating SSH keys.
+
+#Look to see if you have files ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub.
+#If not, create such public/private keys: Open a terminal/shell and type:
+
+$ ssh-keygen -t rsa -C "your_email@example.com"
+
+#Copy your public key (the contents of the newly-created id_rsa.pub file) into your clipboard. On a Mac, in the terminal/shell, type:
+
+#use mousepad, cat or nano to check ~/.ssh/id_rsa.pub.
+
+
+#Go to your github Account Settings
+#-Click “SSH Keys” on the left.
+#-Click “Add SSH Key” on the right.
+#-Add a label (like “Kali”) and paste the public key into the big text box.
+#In a terminal/shell, type the following to test it:
+
+$ ssh -T git@github.com
+#If it says something like the following, it worked:
+
+Hi username! You've successfully authenticated, but Github does
+not provide shell access.
