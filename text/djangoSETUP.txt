@@ -1,0 +1,85 @@
+1. Set up a virtual environment
+$ python3 -m venv envName
+
+Once the process is complete, you also need to activate the virtual environment:
+(this is the first command for when you've already setup the venv)
+
+$ source envName/bin/activate
+
+2. Install Django if you dont have it (or update)
+(envName) $ python -m pip install django
+
+3. Pin your project dependencies
+(envName) $ python -m pip freeze > requirements.txt
+
+This command writes the names and versions of all external Python packages that
+are currently in your virtual environment to a file called requirements.txt. 
+This file will include the django package and all of its dependencies.
+
+Use of the above:
+Suppose you’re working on an existing project with its dependencies already 
+pinned in a requirements.txt file. In that case, you can install the right Django 
+version as well as all the other necessary packages in a single command:
+(envName) $ python -m pip install -r requirements.txt
+
+4. Set up a Django project
+(envName) $ django-admin startproject <project-name>
+
+Running this command creates a default folder structure, which includes some Python files and your management app that has the same name as your project:
+
+
+<project-name>/
+│
+├── <project-name>/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+└── manage.py
+
+In the code block above, you can see the folder structure that the startproject command created for you:
+
+<project-name>/ is your top-level project folder.
+<project-name>/<project-name>/ is your lower-level folder that represents your management app.
+manage.py is a Python file that serves as the command center of your project. It does the same as the django-admin command-line utility.
+The nested <project-name>/<project-name>/ folder contains a couple more files that you’ll edit when you work on your web application.
+
+5. Start a Django app
+(envName) $ python manage.py startapp <appname>
+
+Once the startapp command has finished execution, you’ll see that Django has added another folder to your folder structure:
+
+setup/
+│
+├── <appname>/
+│   │
+│   ├── migrations/
+│   │   └── __init__.py
+│   │
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+│
+├── setup/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+└── manage.py
+
+
+Notable files that were created in the app folder:
+
+__init__.py: Python uses this file to declare a folder as a package, which allows Django to use code from different apps to compose the overall functionality of your web application. You probably won’t have to touch this file.
+
+models.py: You’ll declare your app’s models in this file, which allows Django to interface with the database of your web application.
+
+views.py: You’ll write most of the code logic of your app in this file.
+
