@@ -1,0 +1,24 @@
+HOW TO FING APP PATH
+(This is useful for some python apps)
+
+LONG METHOD
+
+1. Find app desktop name:
+	$ ls /usr/share/applications/
+2. copy the name e.g firefox-esr.desktop
+
+3. use the name in the following command: 
+	$ cat /usr/share/applications/firefox-esr.desktop
+
+4. Find a variable Exec in the output
+	It should look like this:
+	Exec=/usr/lib/firefox-esr/firefox-esr
+This is the path
+
+SHORT METHOD
+$ type firefox
+
+or
+
+$ whereis firefox
+

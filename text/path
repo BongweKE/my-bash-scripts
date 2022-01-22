@@ -1,0 +1,21 @@
+//add this line to the bottom of ~/.bash_profile
+
+export PATH="$PATH:thePathUwant2add"
+
+//then whenver you want to use bash just
+
+source ~/.profile
+
+
+//paths to take note of
+
+snap stuff
+/snap/bin
+django-admin & sqlformat
+/home/black/.local/bin
+
+
+:.
+//notice the ":" usedas a separator
+
+ export PATH="$PATH:/snap/bin:/home/black/.local/bin"

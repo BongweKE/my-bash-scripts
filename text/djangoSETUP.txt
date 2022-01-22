@@ -83,3 +83,9 @@ models.py: You’ll declare your app’s models in this file, which allows Djang
 
 views.py: You’ll write most of the code logic of your app in this file.
 
+6. Finally
+
+
+$ python manage.py migrate
+
+$ python manage.py runserver
