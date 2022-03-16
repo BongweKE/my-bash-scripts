@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sudo snap install --devmode --beta anbox
+# sudo snap install --devmode --beta anbox
+sudo apt install anbox
 echo "____________________________________________________________________________"
-echo " since there's no stable channel you'll have to keep updating using refresh"
+echo "Decided to use apt since the snap was not working "
 echo "____________________________________________________________________________"
